@@ -55,6 +55,19 @@ func createCoin(coinCode string, addrCount, coinVol, peerCount int) common.Confi
 	sk := cipher.NewSecKey(cipher.RandByte(32))
 	pk := cipher.PubKeyFromSecKey(sk)
 
+walletseeds := make([]string, 100)
+	
+for i := 0; i < 100; i++ {
+var gwSeed1,err = bip39.NewDefaultMnemomic()
+if err != nil {
+		log.Fatalf("failed to generate genesis wallet seed")
+	}
+
+		walletseeds[i] = gwSeed1
+	
+
+}
+
 	// Geneate genesis block
 	var (
 		gbAddr  = cipher.AddressFromSecKey(sk)
@@ -76,8 +89,8 @@ func createCoin(coinCode string, addrCount, coinVol, peerCount int) common.Confi
 	peers := make([]string, peerCount)
 	for i := 0; i < peerCount; i++ {
 		peers[i] = fmt.Sprintf("127.0.0.1:%d", trustedPeerPort+i)
-	}
-
+	
+}
 	// Coin configuration
 	cfg := common.Config{
 		Secret: common.SecretConfig{
@@ -100,6 +113,7 @@ func createCoin(coinCode string, addrCount, coinVol, peerCount int) common.Confi
 				Seed:            gwSeed,
 				CoinsPerAddress: uint64(coinVol),
 				Addresses:       uint64(addrCount),
+                                WalletSeeds:      walletseeds,
 			},
 
 			CoinCode: coinCode,

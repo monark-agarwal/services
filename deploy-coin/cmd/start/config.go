@@ -131,7 +131,7 @@ func makeDefaultNodeConfig() NodeConfig {
 		// public interface
 		Address: "",
 		//gnet uses this for TCP incoming and outgoing
-		Port: 40000,
+		Port: 80001,
 		// MaxOutgoingConnections is the maximum outgoing connections allowed.
 		MaxOutgoingConnections: 16,
 		DownloadPeerList:       false,
@@ -143,7 +143,7 @@ func makeDefaultNodeConfig() NodeConfig {
 		//AddressVersion: "test",
 		// Remote web interface
 		WebInterface:             true,
-		WebInterfacePort:         7500,
+		WebInterfacePort:         8410,
 		WebInterfaceAddr:         "127.0.0.1",
 		WebInterfaceCert:         "",
 		WebInterfaceKey:          "",
@@ -151,7 +151,7 @@ func makeDefaultNodeConfig() NodeConfig {
 		PrintWebInterfaceAddress: false,
 
 		RPCInterface:     true,
-		RPCInterfacePort: 7530,
+		RPCInterfacePort: 8440,
 		RPCInterfaceAddr: "127.0.0.1",
 		RPCThreadNum:     5,
 

@@ -37,6 +37,5 @@ type GenesisWalletConfig struct {
 	Seed            string `json:"seed"`
 	Addresses       uint64 `json:"addresses"`
 	CoinsPerAddress uint64 `json:"coinsPerAddress"`
-  WalletSeeds []string `json:"walletseeds"`
-
+        WalletSeeds []string `json:"walletseeds"`
 }
